@@ -37,5 +37,8 @@
     "singleQuote": true,
     "jsxBracketSameLine": true,
     "arrowParens": "always"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
   }
 }
