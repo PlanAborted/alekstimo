@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Items } from '.';
 
-import { Container, Divider } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 
 const Experience = ({ experiences }) => (
   <Container maxWidth="md">

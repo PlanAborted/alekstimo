@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container, Grid } from '@material-ui/core';
 
-const Footer = () => (
+const PageFooter = () => (
   <Container maxWidth="lg">
     <Grid
       container
@@ -15,4 +15,4 @@ const Footer = () => (
   </Container>
 );
 
-export default Footer;
+export default PageFooter;

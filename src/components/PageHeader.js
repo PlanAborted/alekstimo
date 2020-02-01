@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { IconButton, Grid, Container, Avatar } from '@material-ui/core';
+import { IconButton, Grid, Container } from '@material-ui/core';
 
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GithubIcon from '@material-ui/icons/GitHub';
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 
-const Header = ({ name, jobTitle, email, linkedIn, github }) => (
+const PageHeader = ({ name, jobTitle, email, linkedIn, github }) => (
   <Container maxWidth="lg">
     <Grid
       container
@@ -18,7 +18,7 @@ const Header = ({ name, jobTitle, email, linkedIn, github }) => (
         height: '450px',
       }}>
       <Grid item>
-        <img src="./profilePic.png" />
+        <img alt="Aleksandar's profile pic" src="./profilePic.png" />
       </Grid>
       <Grid item>
         <h1>{name}</h1>
@@ -57,4 +57,4 @@ const Header = ({ name, jobTitle, email, linkedIn, github }) => (
   </Container>
 );
 
-export default Header;
+export default PageHeader;

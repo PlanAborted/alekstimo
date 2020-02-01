@@ -1,5 +1,7 @@
-import Header from './Header';
-import Footer from './Footer';
+import PageHeader from './PageHeader';
+import ItemHeader from './ItemHeader';
+import ItemContent from './ItemContent';
+import PageFooter from './PageFooter';
 import About from './About';
 import Experience from './Experience';
 import Education from './Education';
@@ -9,8 +11,10 @@ import Projects from './Projects';
 import Project from './Project';
 
 export {
-  Header,
-  Footer,
+  PageHeader,
+  ItemHeader,
+  ItemContent,
+  PageFooter,
   About,
   Experience,
   Education,

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Divider, Grid } from '@material-ui/core';
+import { Container, Divider } from '@material-ui/core';
 
 const About = ({ text }) => (
   <Container maxWidth="md">

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Project, Item } from './';
+import { Project } from './';
 
 import { Grid, Container } from '@material-ui/core';
 

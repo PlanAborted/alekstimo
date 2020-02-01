@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Header, About, Experience, Education, Footer } from '.';
+import { PageHeader, About, Experience, Education, PageFooter } from '.';
 
 import { aboutText, jobs, studies, personnalInformations } from '../data';
 
@@ -10,7 +10,7 @@ const Home = () => (
       style={{
         backgroundColor: '#212121',
       }}>
-      <Header {...personnalInformations} />
+      <PageHeader {...personnalInformations} />
     </div>
     <About text={aboutText} />
     <Experience experiences={jobs} />
@@ -20,7 +20,7 @@ const Home = () => (
         backgroundColor: '#212121',
         margin: '20px 0 0 0',
       }}>
-      <Footer />
+      <PageFooter />
     </div>
   </div>
 );
