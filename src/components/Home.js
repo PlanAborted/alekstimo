@@ -8,7 +8,11 @@ import {
   ThemeProvider,
   Container,
   CssBaseline,
+  IconButton,
 } from '@material-ui/core';
+
+import Brightness7SharpIcon from '@material-ui/icons/Brightness7Sharp';
+import Brightness4SharpIcon from '@material-ui/icons/Brightness4Sharp';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -34,12 +38,19 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = () => {
   const classes = useStyles();
+  const [darkMode, setDarkMode] = useState(false);
 
+  const handleSwitchDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
   return (
     <ThemeProvider
       theme={createMuiTheme({
         typography: {
           fontSize: 12,
+        },
+        palette: {
+          type: darkMode ? 'dark' : 'light',
         },
       })}>
       <CssBaseline />
@@ -48,6 +59,12 @@ const Home = () => {
         disableGutters
         classes={{ root: classes.header }}>
         <PageHeader {...personnalInformations} />
+        <IconButton
+          onClick={handleSwitchDarkMode}
+          fontSize="large"
+          classes={{ root: classes.switch }}>
+          {darkMode ? <Brightness7SharpIcon /> : <Brightness4SharpIcon />}
+        </IconButton>
       </Container>
       <Container
         maxWidth={false}
