@@ -9,7 +9,6 @@ import {
   CardContent,
   Divider,
   Avatar,
-  Grid,
   Typography,
 } from '@material-ui/core';
 
@@ -27,22 +26,14 @@ const Item = ({
   if (summary || description || bulletPoints || mainTechnos || projects) {
     cardContent = (
       <CardContent>
-        <Grid container direction="column" spacing={4}>
-          <Grid item>
-            <ItemContent
-              summary={summary}
-              description={description}
-              bulletPoints={bulletPoints}
-              mainTechnos={mainTechnos}
-            />
-          </Grid>
+        <ItemContent
+          summary={summary}
+          description={description}
+          bulletPoints={bulletPoints}
+          mainTechnos={mainTechnos}
+        />
 
-          {projects && projects.length > 0 && (
-            <Grid item>
-              <Projects projects={projects} />
-            </Grid>
-          )}
-        </Grid>
+        {projects && projects.length > 0 && <Projects projects={projects} />}
       </CardContent>
     );
   }
