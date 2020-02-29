@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { ItemHeader, ItemContent } from '../Item';
+import { ItemContent } from '../Item';
 
 import {
   Card,
