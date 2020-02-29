@@ -22,7 +22,7 @@ const PageHeader = ({ name, jobTitle, links }) => {
   const { resume } = links;
 
   return (
-    <Grid container direction="column" alignItems="center" spacing={2}>
+    <Grid container direction="column" alignItems="center" spacing={3}>
       <Grid item>
         <Avatar
           alt="Aleksandar's profile pic"

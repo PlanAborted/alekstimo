@@ -6,6 +6,7 @@ import LinkedInSharpIcon from '@material-ui/icons/LinkedIn';
 import GithubSharpIcon from '@material-ui/icons/GitHub';
 import Brightness7SharpIcon from '@material-ui/icons/Brightness7Sharp';
 import Brightness4SharpIcon from '@material-ui/icons/Brightness4Sharp';
+import EmailIcon from '@material-ui/icons/Email';
 
 import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
@@ -21,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 const Appbar = ({ links, handleSwitchDarkMode, darkMode }) => {
   const classes = useStyles();
 
-  const { github, linkedIn } = links;
+  const { github, linkedIn, email } = links;
   return (
     <AppBar classes={{ root: classes.appbar }}>
       <Grid container direction="row" justify="flex-end" alignItems="center">
@@ -36,6 +37,13 @@ const Appbar = ({ links, handleSwitchDarkMode, darkMode }) => {
           <Grid item>
             <IconButton href={github} target="_blank">
               <GithubSharpIcon classes={{ root: classes.icons }} />
+            </IconButton>
+          </Grid>
+        )}
+        {email && (
+          <Grid item>
+            <IconButton href={`mailto:${email}`} target="_blank">
+              <EmailIcon classes={{ root: classes.icons }} />
             </IconButton>
           </Grid>
         )}
