@@ -15,6 +15,27 @@ export const personnalInformations = {
   },
 };
 
+export const skills = [
+  {
+    name: 'Javascript',
+    description: 'NodeJS (Express, Jest), ReactJS',
+    percentage: 90,
+  },
+  {
+    name: 'Bases de Données',
+    description: 'MySQL, PostgreSQL, MongoDB, GraphQL, InfluxDB',
+    percentage: 80,
+  },
+  {
+    name: 'Software Craftsmanship',
+    description: 'Agile (Scrum), XP, TDD, Clean Code',
+    percentage: 60,
+  },
+  { name: 'CI/CD', description: 'Git, Docker, Kubernetes', percentage: 60 },
+  { name: 'Architecture', description: 'Microservices', percentage: 60 },
+  { name: 'Java', percentage: 60 },
+];
+
 export const jobs = [
   {
     location: {

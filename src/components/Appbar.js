@@ -45,7 +45,7 @@ const ColorLinearProgress = withStyles({
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
-    backgroundColor: '#303030',
+    backgroundColor: theme.palette.grey.A400,
   },
   icons: {
     color: theme.palette.grey[50],

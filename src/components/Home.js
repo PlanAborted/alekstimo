@@ -3,7 +3,13 @@ import React, { useState } from 'react';
 import { PageHeader, PageContent, PageFooter } from './Page';
 import { Appbar } from '.';
 
-import { aboutText, jobs, studies, personnalInformations } from '../data';
+import {
+  aboutText,
+  jobs,
+  studies,
+  skills,
+  personnalInformations,
+} from '../data';
 import {
   createMuiTheme,
   ThemeProvider,
@@ -15,7 +21,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   header: {
-    backgroundColor: '#303030',
+    backgroundColor: theme.palette.grey.A400,
     color: theme.palette.grey[50],
     padding: theme.spacing(15, 5, 6, 5),
   },
@@ -23,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
   },
   footer: {
-    backgroundColor: '#303030',
+    backgroundColor: theme.palette.grey.A400,
     color: theme.palette.grey[50],
     padding: theme.spacing(5),
   },
@@ -62,7 +68,12 @@ const Home = () => {
         maxWidth={false}
         disableGutters
         classes={{ root: classes.content }}>
-        <PageContent aboutText={aboutText} jobs={jobs} studies={studies} />
+        <PageContent
+          aboutText={aboutText}
+          jobs={jobs}
+          studies={studies}
+          skills={skills}
+        />
       </Container>
       <Container
         maxWidth={false}
