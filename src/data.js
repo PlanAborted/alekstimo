@@ -6,6 +6,7 @@ Les un an au sein de Talan Labs m’ont permis d’acquérir une solide expérie
 export const personnalInformations = {
   name: 'Aleksandar Timotijevic',
   jobTitle: 'Développeur Fullstack Javascript',
+  location: 'Paris, France',
   links: {
     email: 'contact@alekstimo.fr',
     linkedIn: 'https://linkedin.com/in/aleks-timo',

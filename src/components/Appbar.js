@@ -56,9 +56,7 @@ const useStyles = makeStyles((theme) => ({
 const Appbar = ({ links, handleSwitchDarkMode, darkMode }) => {
   const classes = useStyles();
 
-  const [scrollProgress, setScrollProgress] = useState(
-    calculateScrollDistance()
-  );
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     document.addEventListener('scroll', () => {

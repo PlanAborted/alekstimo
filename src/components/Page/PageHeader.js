@@ -3,6 +3,7 @@ import React from 'react';
 import { Grid, Typography, Avatar, IconButton } from '@material-ui/core';
 
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
+import RoomIcon from '@material-ui/icons/Room';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -17,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const PageHeader = ({ name, jobTitle, links }) => {
+const PageHeader = ({ name, jobTitle, location, links }) => {
   const classes = useStyles();
   const { resume } = links;
 
@@ -30,13 +31,32 @@ const PageHeader = ({ name, jobTitle, links }) => {
           className={classes.avatar}
         />
       </Grid>
-      <Grid item>
-        <Typography variant="h4" align="center">
-          {name}
-        </Typography>
-        <Typography variant="h5" align="center">
-          {jobTitle}
-        </Typography>
+      <Grid item container direction="column" alignItems="center">
+        <Grid item>
+          <Typography variant="h4" align="center">
+            {name}
+          </Typography>
+        </Grid>
+        <Grid item>
+          <Typography variant="h5" align="center">
+            {jobTitle}
+          </Typography>
+        </Grid>
+        <Grid
+          item
+          container
+          direction="row"
+          alignItems="center"
+          justify="center">
+          <Grid item>
+            <RoomIcon />
+          </Grid>
+          <Grid item>
+            <Typography variant="h5" align="center">
+              {location}
+            </Typography>
+          </Grid>
+        </Grid>
       </Grid>
       <Grid item>
         <IconButton href={resume} target="_blank">
