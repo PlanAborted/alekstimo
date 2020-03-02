@@ -194,7 +194,7 @@ const studies = [
           adress: 'Paris, France',
         },
         dates: 'Jan. 2017 - May 2017',
-        title: `Android game development (4 people)`,
+        title: `Android Runner game development (4 people)`,
         summary: '',
         description: '',
         bulletPoints: [
@@ -210,11 +210,11 @@ const studies = [
       {
         location: {
           logo: './logoDescartes.png',
-          name: 'Université Paris 5 Descartes',
+          name: 'Paris 5 Descartes University',
           adress: 'Paris, France',
         },
-        dates: 'Jan. 2016 - Mai 2016',
-        title: `Développement d'un Jeu de Dames sur PC (en équipe de 4)`,
+        dates: 'Jan. 2016 - May 2016',
+        title: `PC Checkers game development (4 people)`,
         summary: '',
         description: '',
         bulletPoints: [
