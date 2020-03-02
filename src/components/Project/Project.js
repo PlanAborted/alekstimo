@@ -13,7 +13,23 @@ import {
   Typography,
 } from '@material-ui/core';
 
+import { makeStyles } from '@material-ui/core/styles';
+import clsx from 'clsx';
+
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
+const useStyles = makeStyles((theme) => ({
+  expand: {
+    transform: 'rotate(0deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  expandOpen: {
+    transform: 'rotate(180deg)',
+  },
+}));
 
 const Project = ({
   location,
@@ -24,6 +40,8 @@ const Project = ({
   bulletPoints = [],
   mainTechnos = [],
 }) => {
+  const classes = useStyles();
+
   const [expanded, setExpanded] = useState(false);
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -37,7 +55,13 @@ const Project = ({
         }
         subheader={`${title} / ${dates}`}
         action={
-          <IconButton onClick={handleExpandClick}>
+          <IconButton
+            className={clsx(classes.expand, {
+              [classes.expandOpen]: expanded,
+            })}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more">
             <ExpandMoreIcon />
           </IconButton>
         }
