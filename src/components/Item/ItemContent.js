@@ -16,8 +16,10 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'justify',
   },
   chip: {
-    backgroundColor: '#212121',
-    color: '#fafafa',
+    backgroundColor: theme.palette.getContrastText(
+      theme.palette.background.default
+    ),
+    color: theme.palette.background.default,
     margin: '2px',
     padding: '2px',
   },
