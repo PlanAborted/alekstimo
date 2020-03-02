@@ -1,9 +1,9 @@
-export const aboutText = `Passionné par l'informatique depuis toujours, c'est logiquement que je me suis tourné vers des études de Programmation.
+const aboutText = `Passionné par l'informatique depuis toujours, c'est logiquement que je me suis tourné vers des études de Programmation.
 Cela m'a permis d'acquérir un esprit logique et une capacité d'analyse, mais aussi les bases dans tous les domaines de l'Informatique tels que la gestion de projets, les réseaux, les bases de données, la sécurité et le génie logiciel.
 Après un stage de fin d’études réussi, l’idée de mettre à profit mes compétences acquises à l’Université au sein de projets concrets m’a motivé à me lancer dans le monde professionnel.
 Les un an au sein de Talan Labs m’ont permis d’acquérir une solide expérience dans l’artisanat logiciel, notamment en participant à un projet d’envergure pour le compte de la SNCF Gares & Connexions.`;
 
-export const personnalInformations = {
+const personnalInformations = {
   name: 'Aleksandar Timotijevic',
   jobTitle: 'Développeur Fullstack Javascript',
   location: 'Paris, France',
@@ -15,7 +15,7 @@ export const personnalInformations = {
   },
 };
 
-export const skills = [
+const skills = [
   {
     name: 'Javascript',
     description: 'NodeJS (Express, Jest), ReactJS',
@@ -27,7 +27,7 @@ export const skills = [
     percentage: 80,
   },
   {
-    name: 'Software Craftsmanship',
+    name: 'Artisanat Logiciel',
     description: 'Agile (Scrum), XP, TDD, Clean Code',
     percentage: 60,
   },
@@ -36,7 +36,7 @@ export const skills = [
   { name: 'Java', percentage: 60 },
 ];
 
-export const jobs = [
+const jobs = [
   {
     location: {
       logo: './logoTalanLabs.png',
@@ -135,7 +135,7 @@ export const jobs = [
           `Analyse et définition des besoins du Client final`,
           `Mise en place et configuration d'une Base de Données MySQL : MySQL WorkBench`,
           `Mise en place d'un Web Service : Serveur Glassfish 5, Back-End JavaEE`,
-          `Migration d'une Base de Données ACCESS 97 vers MySQL : Export de la BDD sous Excel, Création de scripts d'importation dans la nouvelle BDD (Parsing Excel - Apache POI, Validation des données, Import MySQL par Web Service)`,
+          `Migration d'une Base de Données ACCESS 97 vers MySQL :  de la BDD sous Excel, Création de scripts d'importation dans la nouvelle BDD (Parsing Excel - Apache POI, Validation des données, Import MySQL par Web Service)`,
           `Mise en place d'une interface graphique : Front-End JavaFX, Système de comptes utilisateurs (Cryptage et stockage des mots de passe dans la BDD, Système de Tokens utilisateurs)`,
           `Configuration de la communication Front Back (Client Serveur) : Jax-WS, SOAP-XML`,
           `Mise en place de la création de documents : Fiches de Suivi de Commandes, Bons de Livraisons, etc. (Remplissage de formulaires PDF - API iText)`,
@@ -155,7 +155,7 @@ export const jobs = [
   },
 ];
 
-export const studies = [
+const studies = [
   {
     location: {
       logo: './logoDescartes.png',
@@ -242,3 +242,13 @@ export const studies = [
     description: '',
   },
 ];
+
+const dataFR = {
+  aboutText,
+  jobs,
+  studies,
+  skills,
+  personnalInformations,
+};
+
+export default dataFR;

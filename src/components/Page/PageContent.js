@@ -6,28 +6,28 @@ import { Items } from '../Item';
 
 import { Container, Grid, Typography } from '@material-ui/core';
 
-const PageContent = ({ aboutText, jobs, studies, skills }) => (
+const PageContent = ({ aboutText, jobs, studies, skills, localeIsFrench }) => (
   <Container maxWidth="md">
     <Grid container direction="column" spacing={7}>
       <Grid item>
-        <Section title="A propos">
+        <Section title={localeIsFrench ? 'A propos' : 'About me'}>
           <Typography align="justify" variant="body1">
             {aboutText}
           </Typography>
         </Section>
       </Grid>
       <Grid item>
-        <Section title="Compétences">
+        <Section title={localeIsFrench ? 'Compétences' : 'Skills'}>
           <Skills skills={skills} />
         </Section>
       </Grid>
       <Grid item>
-        <Section title="Experiences">
+        <Section title={localeIsFrench ? 'Expérience' : 'Experience'}>
           <Items details={jobs} />
         </Section>
       </Grid>
       <Grid item>
-        <Section title="Formations">
+        <Section title={localeIsFrench ? 'Formation' : 'Education'}>
           <Items details={studies} />
         </Section>
       </Grid>

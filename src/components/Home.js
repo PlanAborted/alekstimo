@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { PageHeader, PageContent, PageFooter } from './Page';
 import { Appbar } from '.';
 
-import {
-  aboutText,
-  jobs,
-  studies,
-  skills,
-  personnalInformations,
-} from '../data';
+import dataFR from '../dataFR';
+import dataEN from '../dataEN';
+
 import {
   createMuiTheme,
   ThemeProvider,
@@ -37,11 +33,22 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = () => {
   const classes = useStyles();
+  const [data, setData] = useState(dataFR);
   const [darkMode, setDarkMode] = useState(false);
+  const [localeIsFrench, setLocaleIsFrench] = useState(true);
 
   const handleSwitchDarkMode = () => {
     setDarkMode(!darkMode);
   };
+  const handleSwitchLocale = () => {
+    setLocaleIsFrench(!localeIsFrench);
+  };
+
+  useEffect(() => {
+    localeIsFrench ? setData(dataFR) : setData(dataEN);
+    console.log('TEST');
+  }, [localeIsFrench]);
+
   return (
     <ThemeProvider
       theme={createMuiTheme({
@@ -54,25 +61,28 @@ const Home = () => {
       })}>
       <CssBaseline />
       <Appbar
-        links={personnalInformations.links}
+        links={data.personnalInformations.links}
         handleSwitchDarkMode={handleSwitchDarkMode}
         darkMode={darkMode}
+        handleSwitchLocale={handleSwitchLocale}
+        localeIsFrench={localeIsFrench}
       />
       <Container
         maxWidth={false}
         disableGutters
         classes={{ root: classes.header }}>
-        <PageHeader {...personnalInformations} />
+        <PageHeader {...data.personnalInformations} />
       </Container>
       <Container
         maxWidth={false}
         disableGutters
         classes={{ root: classes.content }}>
         <PageContent
-          aboutText={aboutText}
-          jobs={jobs}
-          studies={studies}
-          skills={skills}
+          aboutText={data.aboutText}
+          jobs={data.jobs}
+          studies={data.studies}
+          skills={data.skills}
+          localeIsFrench={localeIsFrench}
         />
       </Container>
       <Container

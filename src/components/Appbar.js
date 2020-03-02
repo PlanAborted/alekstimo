@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-import { IconButton, Grid, AppBar, LinearProgress } from '@material-ui/core';
+import {
+  IconButton,
+  Grid,
+  AppBar,
+  LinearProgress,
+  Typography,
+} from '@material-ui/core';
 
 import LinkedInSharpIcon from '@material-ui/icons/LinkedIn';
 import GithubSharpIcon from '@material-ui/icons/GitHub';
@@ -51,9 +57,19 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.grey[50],
     fontSize: 35,
   },
+  locale: {
+    color: theme.palette.grey[50],
+    fontSize: 25,
+  },
 }));
 
-const Appbar = ({ links, handleSwitchDarkMode, darkMode }) => {
+const Appbar = ({
+  links,
+  handleSwitchDarkMode,
+  darkMode,
+  handleSwitchLocale,
+  localeIsFrench,
+}) => {
   const classes = useStyles();
 
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -71,29 +87,19 @@ const Appbar = ({ links, handleSwitchDarkMode, darkMode }) => {
 
   return (
     <AppBar classes={{ root: classes.appbar }}>
-      <Grid container direction="row" justify="flex-end" alignItems="center">
-        {linkedIn && (
-          <Grid item>
-            <IconButton href={linkedIn} target="_blank">
-              <LinkedInSharpIcon classes={{ root: classes.icons }} />
-            </IconButton>
-          </Grid>
-        )}
-        {github && (
-          <Grid item>
-            <IconButton href={github} target="_blank">
-              <GithubSharpIcon classes={{ root: classes.icons }} />
-            </IconButton>
-          </Grid>
-        )}
-        {email && (
-          <Grid item>
-            <IconButton href={`mailto:${email}`} target="_blank">
-              <EmailIcon classes={{ root: classes.icons }} />
-            </IconButton>
-          </Grid>
-        )}
+      <Grid
+        container
+        direction="row"
+        justify="space-between"
+        alignItems="center">
         <Grid item>
+          <IconButton onClick={handleSwitchLocale}>
+            {localeIsFrench ? (
+              <Typography classes={{ root: classes.locale }}>FR</Typography>
+            ) : (
+              <Typography classes={{ root: classes.locale }}>EN</Typography>
+            )}
+          </IconButton>
           <IconButton onClick={handleSwitchDarkMode}>
             {darkMode ? (
               <Brightness7SharpIcon classes={{ root: classes.icons }} />
@@ -101,6 +107,31 @@ const Appbar = ({ links, handleSwitchDarkMode, darkMode }) => {
               <Brightness4SharpIcon classes={{ root: classes.icons }} />
             )}
           </IconButton>
+        </Grid>
+        <Grid item>
+          <Grid container>
+            {linkedIn && (
+              <Grid item>
+                <IconButton href={linkedIn} target="_blank">
+                  <LinkedInSharpIcon classes={{ root: classes.icons }} />
+                </IconButton>
+              </Grid>
+            )}
+            {github && (
+              <Grid item>
+                <IconButton href={github} target="_blank">
+                  <GithubSharpIcon classes={{ root: classes.icons }} />
+                </IconButton>
+              </Grid>
+            )}
+            {email && (
+              <Grid item>
+                <IconButton href={`mailto:${email}`} target="_blank">
+                  <EmailIcon classes={{ root: classes.icons }} />
+                </IconButton>
+              </Grid>
+            )}
+          </Grid>
         </Grid>
       </Grid>
       <ColorLinearProgress
