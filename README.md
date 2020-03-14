@@ -22,6 +22,12 @@ A step by step series of examples that tell you how to get a development env run
 3. Change the data contained in `src/data.js`
 4. Add logos into `src/public` if referenced in `src/data.js`
 
+### Note about `.env` file not being ignored
+
+Due to using `react-snap`, there is an issue related to relative imports made in the `public/index.html`.
+The `.env` file's sole purpose is to fix the [issue](https://github.com/stereobooster/react-snap/issues/153#issuecomment-513446799).
+The file itself should always be ignored and not commited, but for convenience I decided to not bother other people that might encounter the same issue.
+
 ## Deployment
 
 To deploy on [Github Pages](https://pages.github.com/) :
