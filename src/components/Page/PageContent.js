@@ -23,7 +23,7 @@ const PageContent = ({ aboutText, jobs, studies, skills, localeIsFrench }) => (
       </Grid>
       <Grid item>
         <Section title={localeIsFrench ? 'Expérience' : 'Experience'}>
-          <Items details={jobs} />
+          <Items details={jobs} localeIsFrench={localeIsFrench} />
         </Section>
       </Grid>
       <Grid item>

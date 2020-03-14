@@ -46,7 +46,6 @@ const Home = () => {
 
   useEffect(() => {
     localeIsFrench ? setData(dataFR) : setData(dataEN);
-    console.log('TEST');
   }, [localeIsFrench]);
 
   return (
