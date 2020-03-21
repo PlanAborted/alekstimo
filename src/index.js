@@ -1,9 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Home from './components/Home';
+import { render } from 'react-dom';
+import { Home } from './components';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<Home />, document.getElementById('root'));
+const rootElement = document.getElementById('root');
+
+render(<Home />, rootElement);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import { Helmet } from 'react-helmet';
+
 import { PageHeader, PageContent, PageFooter } from './Page';
 import { Appbar } from '.';
 
@@ -59,6 +61,13 @@ const Home = () => {
         },
       })}>
       <CssBaseline />
+      <Helmet>
+        <title>Aleksandar Timotijevic | Fullstack Javascript Developer</title>
+        <meta
+          name="description"
+          content="Aleksandar Timotijevic's personnal resume/website"
+        />
+      </Helmet>
       <Appbar
         links={data.personnalInformations.links}
         handleSwitchDarkMode={handleSwitchDarkMode}
